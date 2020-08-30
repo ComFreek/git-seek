@@ -21,6 +21,8 @@ jobs:
       run: sbt test
     - name: Build fat JAR
       run: sbt assembly
+    - name: Copy fat JAR to location from which it is deployed
+      run: cp $(find -type f -iwholename "./target/*/*-assembly*.jar" -print -quit) git-seek.jar
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
@@ -38,7 +40,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./test.jar
+        asset_path: git-seek.jar
         asset_name: git-seek-${{ github.ref }}.jar
         asset_content_type: application/java-archive
     
