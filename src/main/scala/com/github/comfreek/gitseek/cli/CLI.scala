@@ -9,8 +9,8 @@ import com.github.comfreek.gitseek.util.DirectoryWalker
 import com.github.comfreek.gitseek.check.GitRepoCheck
 
 case class CLIConfig(
-                 dir: File = new File("."),
-                 runConfig: RunConfig = RunConfig()
+                      dir: File = new File("."),
+                      runConfig: RunConfig = RunConfig()
                  )
 object CLI {
   private val builder = OParser.builder[CLIConfig]
@@ -20,6 +20,9 @@ object CLI {
     OParser.sequence(
       programName(ProgramInfo.executableName),
       head(ProgramInfo.programName, ProgramInfo.version),
+
+      help('h', "help")
+        .text("print this help message"),
 
       opt[Unit]('n', "dry-run")
         .optional()

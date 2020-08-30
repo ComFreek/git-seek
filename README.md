@@ -2,9 +2,17 @@
 
 **CLI tool to seek your hard drive for Git repos and check their dirtyness**
 
-```bash
-$> git-seek C:\Users\ComFreek\Desktop
+It checks for
 
+- a clean working directory (`git status`)
+- an empty stash (`git stash ls`)
+- that all remotes still exist
+- that all branches are up-do-date with their tracking remote branch
+
+## Example
+
+```bash
+$> git-seek --may-fetch C:\Users\ComFreek\Desktop
 
 ==================================================
      Found Git repo at `C:\Users\ComFreek\Desktop\repo1\.git`
@@ -39,4 +47,18 @@ $> git-seek C:\Users\ComFreek\Desktop
 
 
 ✗ 1/2 repositories failed checking.
+```
+
+## Usage
+
+```
+$> git-seek --help
+
+git-seek 0.0.1
+Usage: git-seek [options] <dir>
+
+  -h, --help       print this help message
+  -n, --dry-run    only search and list Git repositories under <dir>; do not do anything else
+  -f, --may-fetch  allow running `git fetch` to assess whether local clone is commits behind/ahead of remote
+  <dir>            directory to recursively search for Git repositories
 ```
