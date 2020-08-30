@@ -1,7 +1,8 @@
 # git-seek(1): seek for Git repos and report on their dirtyness
 
 **Do you have tens of Git clones lying around and find yourself frequently switching between them? Did you ever become distracted while doing changes and later forget about them?**
-*Then*, this tool might be for you: it recursively searches for repos on your drive and checks them for the following conditions:
+
+Then, this tool might be for you: it recursively searches for repos on your drive and checks them for the following conditions:
 
 - a clean working directory (= empty `git status`)
 - an empty stash (= empty `git stash list`)
@@ -66,3 +67,9 @@ Usage: git-seek [options] <dir>
   -f, --may-fetch  allow running `git fetch` to assess whether local clone is commits behind/ahead of remote
   <dir>            directory to recursively search for Git repositories
 ```
+
+## Development
+
+Development is done using JetBrains IntelliJ IDEA. You can simply open the repo's root as an IntelliJ project.
+
+Deployment to a single JAR is done via SBT and the [sbt-assembly plugin](https://github.com/sbt/sbt-assembly#using-published-plugin): simply run `sbt assembly` from the repo's root.
