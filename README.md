@@ -23,7 +23,7 @@ $> git-seek C:\Users\ComFreek\Desktop
 ==================================================
 
 ==================================================
-     Found Git repo at `C:\Users\ComFreek\Desktop\repo1\.git`
+     Found Git repo at `C:\Users\ComFreek\Desktop\repo2\.git`
 --------------------------------------------------
     ✓ Status Check succeeded
         ✓ Clean working directory
@@ -34,7 +34,7 @@ $> git-seek C:\Users\ComFreek\Desktop
     ✗ Remotes-en-par Check failed:
         ✗ refs/heads/devel (remotely tracked at refs/remotes/origin/devel) is 4 commits behind and 0 commits ahead
 --------------------------------------------------
-✗ An error occurred while checking repo C:\Users\ComFreek\repo1\.git, see above.
+✗ An error occurred while checking repo C:\Users\ComFreek\repo2\.git, see above.
 ==================================================
 
 
