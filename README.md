@@ -1,9 +1,6 @@
-# git-seek
+# git-seek(1): seek for Git repos and report on their dirtyness
 
-**CLI tool to seek your hard drive for Git repos and to report on their dirtyness.**
-
-Do you have tens of Git clones lying around and find yourself frequently switching between them?
-Did you ever become distracted while doing changes and later forget about them?
+**Do you have tens of Git clones lying around and find yourself frequently switching between them? Did you ever become distracted while doing changes and later forget about them?**
 *Then*, this tool might be for you: it recursively searches for repos on your drive and checks them for the following conditions:
 
 - a clean working directory (= empty `git status`)
@@ -11,8 +8,9 @@ Did you ever become distracted while doing changes and later forget about them?
 - the existence of all remotes (≈ that you can still clone from them)
 - the up-do-dateness of all branches wrt. their remote branches (≈ `git fetch && git status` saying "your branch is up to date with '...'")
 
-git-seek has been built with robustness in mind.
-It uses [Eclipse's JGit library](https://www.eclipse.org/jgit/) to interfere with Git repos. Its actions are read-only *by default*.
+git-seek has been **built with robustness in mind**.
+It uses the dedicated [Eclipse's JGit library](https://www.eclipse.org/jgit/) to interfere with Git repos. No brittle parsing of `git` command outputs is done.
+The performed actions are read-only *by default*.
 Only with `--may-fetch`, it fetches updates, but even then it does absolutely *no merging*.
 
 ## Example
