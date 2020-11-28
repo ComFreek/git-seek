@@ -2,7 +2,7 @@ name := "git-explorer"
 
 version := "0.1"
 
-scalaVersion := "2.13.3"
+scalaVersion := "2.13.4"
 
 mainClass in assembly := Some("com.github.comfreek.gitseek.cli.CLI")
 
