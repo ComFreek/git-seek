@@ -14,5 +14,5 @@ libraryDependencies ++= Seq(
   "org.eclipse.jgit" % "org.eclipse.jgit" % "5.10.0.202012080955-r",
 
   // in order for the JAR created by `sbt package` to run standalone with pure Java and without Scala
-  "org.scala-lang" % "scala-library-all" % "2.12.13"
+  "org.scala-lang" % "scala-library-all" % "2.12.19"
 )
