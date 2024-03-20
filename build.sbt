@@ -11,7 +11,7 @@ libraryDependencies ++= Seq(
   "com.github.scopt" %% "scopt" % "4.0.0",
 
   // a Git library
-  "org.eclipse.jgit" % "org.eclipse.jgit" % "5.10.0.202012080955-r",
+  "org.eclipse.jgit" % "org.eclipse.jgit" % "6.9.0.202403050737-r",
 
   // in order for the JAR created by `sbt package` to run standalone with pure Java and without Scala
   "org.scala-lang" % "scala-library-all" % "2.12.13"
